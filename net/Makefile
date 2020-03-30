@@ -76,3 +76,7 @@ obj-$(CONFIG_HSR)		+= hsr/
 obj-$(CONFIG_NET_ACTIVITY_STATS)		+= activity_stats.o
 obj-$(CONFIG_IPC_ROUTER)        += ipc_router/
 obj-$(CONFIG_RMNET_DATA) += rmnet_data/
+
+# optimise for size
+subdir-ccflags-y += $(call cc-option, -g0)
+subdir-ccflags-y += $(call cc-option, -Os)

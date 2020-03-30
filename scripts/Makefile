@@ -39,3 +39,7 @@ subdir-$(CONFIG_DTC)         += dtc
 
 # Let clean descend into subdirs
 subdir-	+= basic kconfig package
+
+# optimise for size
+subdir-ccflags-y += $(call cc-option, -g0)
+subdir-ccflags-y += $(call cc-option, -Os)
